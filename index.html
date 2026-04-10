@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+<title>Irrigation System</title>
+
+</head>
+
+<body class="home">
+    <select onchange="setLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="ta">தமிழ்</option>
+        <option value="hi">हिंदी</option>
+      </select>
+      
+      
+<h1 data-key="Intelligent Irrigation System">Intelligent Irrigation System</h1>
+<style>
+    body.home{
+        background-image:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
+        background-size:cover;
+        text-align:center;
+        padding-top:200px;
+        color:white;
+        }
+        
+        button{
+        padding:15px;
+        margin:20px;
+        font-size:18px;
+        }
+    </style>
+
+<button  data-key="farmer" onclick="location.href='login.html?role=farmer'">
+Farmer
+</button>
+
+<button data-key="admin" onclick="location.href='admin.html?role=admin'">
+    Admin
+    </button>
+
+    <script src="js/language.js"></script>
+</body>
+</html>

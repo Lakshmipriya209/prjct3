@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+<h2>Admin Dashboard</h2>
+
+<div class="stats">
+    <div class="card stat">
+      <h4>Total Farmers</h4>
+      <p id="farmerCount">0</p>
+    </div>
+  
+    <div class="card stat">
+      <h4>Water Saved</h4>
+      <p id="waterSaved">0</p>
+    </div>
+  
+    <div class="card stat">
+      <h4>Avg Rainfall</h4>
+      <p><span id="avgRain">0</span> mm</p>
+    </div>
+  </div>
+  <div class="card">
+    <table>
+<tr>
+<th>ID</th>
+<th>Area</th>
+<th>Crop</th>
+<th>Water</th>
+<th>Time</th>
+
+<th>Rainfall</th>
+</tr>
+
+<tbody id="data"></tbody>
+</table>
+</div>
+
+<h2>Feedback</h2>
+<div class="card">
+  <div id="feedbackList"></div>
+</div>
+
+<script src="./js/admin.js"></script>
+<script src="./js/language.js"></script>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Irrigation Result</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    
+        <div class="container">
+    <select onchange="setLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="ta">தமிழ்</option>
+        <option value="hi">हिंदी</option>
+      </select>
+      
+      
+      <h2 data-key="analyze">Irrigation Result</h2>
+
+<p id="water"></p>
+
+<p id="time"></p>
+
+<p id="rain"></p>
+<p id="decision"></p>
+<h3>Previous Records</h3>
+<div id="history"></div>
+<script>
+let data = JSON.parse(localStorage.getItem("result"));
+
+document.getElementById("water").innerText =
+"Water Required : " + data.waterNeeded + " Liters";
+
+document.getElementById("time").innerText =
+"Irrigation Time : " + data.irrigationTime;
+
+document.getElementById("rain").innerText =
+"Rainfall : " + (data.rain || 0).toFixed(2) + " mm";</script>
+<div style="width:250px;height:250px;margin:auto">
+    <canvas id="chart" width="300" height="300"></canvas>
+</div>
+
+<script src="js/chart.js"></script>
+<script src="js/language.js"></script>
+        </div>
+</body>
+
+</html>

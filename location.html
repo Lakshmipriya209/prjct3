@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+<title>Farm Location</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+</head>
+
+<body>
+    
+        <div class="container">
+    <select onchange="setLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="ta">தமிழ்</option>
+        <option value="hi">हिंदी</option>
+      </select>
+      
+      
+<div class="container">
+
+<h2 data-key="selectLocation">Farm Location</h2>
+
+<div id="map" style="height:350px;"></div>
+
+<br>
+
+District
+<input id="district" readonly>
+
+Latitude
+<input id="lat" readonly>
+
+Longitude
+<input id="lng" readonly>
+
+<br><br>
+
+<button onclick="nextPage()" data-key="next">Next</button>
+
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="js/map.js"></script>
+
+<script>
+
+function nextPage(){
+
+let lat=document.getElementById("lat").value;
+
+if(!lat){
+alert("Please select farm location");
+return;
+}
+
+window.location="farmerInput.html";
+
+}
+
+</script>
+<script src="js/language.js"></script>
+        </div>
+</body>
+
+</html>

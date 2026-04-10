@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Farmer Input</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  
+    <div class="container">
+
+  <h2 data-key="farmDetails">Farm Details</h2>
+
+<!-- Language -->
+<select onchange="setLanguage(this.value)">
+  <option value="en">English</option>
+  <option value="ta">தமிழ்</option>
+  <option value="hi">हिंदी</option>
+</select>
+
+
+
+<br><br>
+
+<!-- Inputs -->
+<label data-key="landArea">Land Area</label>
+<input id="area" type="number" placeholder="Enter land area">
+
+<br><br>
+
+<label data-key="soil">Soil</label>
+<select id="soil">
+  <option>Clay</option>
+  <option>Sandy</option>
+  <option>Loamy</option>
+  <option>Silty</option>
+</select>
+
+<br><br>
+
+<label data-key="crop">Crop</label>
+<select id="crop">
+  <option>Rice</option>
+  <option>Wheat</option>
+  <option>Maize</option>
+  <option>Sugarcane</option>
+  <option>Cotton</option>
+</select>
+
+<br><br>
+
+<!-- ✅ FIXED BUTTON -->
+<button id="analyzeBtn" data-key="analyze">Analyze Irrigation</button>
+<br><br>
+<label data-key="notify">Notification Type</label>
+<select id="notify">
+  <option value="daily">Daily</option>
+  <option value="weekly">Weekly</option>
+  <option value="monthly">Monthly</option>
+</select>
+<br><br>
+
+<textarea id="feedback" data-placeholder="feedback" placeholder="Enter feedback"></textarea>
+<br><br>
+
+<button onclick="submitFeedback()">Submit</button>
+
+<script>
+  async function submitFeedback(){
+    let fb = document.getElementById("feedback").value;
+  
+    if(fb===""){
+      alert("Enter feedback");
+      return;
+    }
+  
+    await fetch("http://localhost:5000/feedback",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify({ message: fb })
+    });
+  
+    alert("Thank you for feedback");
+  }
+</script>
+
+<!-- ✅ LOAD JS AT BOTTOM -->
+<script src="js/irrigation.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("analyzeBtn");
+
+    btn.addEventListener("click", function(){
+        console.log("Button clicked");
+        analyzeIrrigation();
+    });
+});
+</script>
+    </div>
+    <script src="js/language.js"></script>
+</body>
+</html>

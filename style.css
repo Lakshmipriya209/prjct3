@@ -1,0 +1,243 @@
+/* ===== GLOBAL ===== */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #e3ecf5);
+  margin: 0;
+}
+
+/* ===== NAVBAR STYLE (AUTO APPLIES TO TOP TEXT) ===== */
+h1 {
+  background: #2e7d32;
+  color: white;
+  margin: 0;
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* ===== SECTION STYLE ===== */
+.container > * {
+  margin-bottom: 15px;
+}
+
+/* ===== SUB HEADINGS ===== */
+h2 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+/* ===== FORM GRID (DASHBOARD STYLE) ===== */
+/* Apply grid ONLY for forms, NOT admin */
+.container.form-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ===== FULL WIDTH ELEMENTS ===== */
+#map,
+textarea,
+select:first-child {
+  grid-column: span 2;
+}
+
+/* ===== INPUT FIELDS ===== */
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  background: #fafafa;
+  transition: 0.2s;
+}
+
+/* ===== FOCUS ===== */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #2e7d32;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(46,125,50,0.3);
+}
+
+/* ===== BUTTON ===== */
+button {
+  display: block;
+  width: fit-content;
+  min-width: 160px;
+  margin: 20px auto;   /* THIS CENTERS BUTTON */
+  padding: 12px 25px;
+
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: white;
+  border: none;
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button {
+  padding: 14px;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* ===== MAP ===== */
+#map {
+  height: 260px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+/* ===== LABEL ===== */
+label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* ===== CARD (ADMIN / FEEDBACK) ===== */
+.card {
+  background: #ffffff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ===== FEEDBACK TEXTAREA ===== */
+textarea {
+  min-height: 90px;
+  resize: none;
+}
+
+/* ===== SMALL SCREEN ===== */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  #map, button, textarea {
+    grid-column: span 1;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+}
+/* ===== LOGIN FORM FIX ===== */
+/* Apply only for login form */
+.container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Make inputs appear in 2 columns only for larger screens */
+@media (min-width: 768px) {
+  .container form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  /* Full width elements */
+  .container form button,
+  .container form select {
+    grid-column: span 2;
+  }
+}
+/* ===== STATS CARDS ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  color: white;
+}
+
+.stat h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.stat p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+th {
+  background: #2e7d32;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background: #f5f5f5;
+}
+#feedbackList div {
+  background: #ffffff;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border-left: 5px solid #2e7d32;
+}
+/* Force center inside any layout */
+.container button {
+  justify-self: center;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+<title>Farmer Login</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  
+    <div class="container">
+      
+      <script src="js/language.js"></script>
+<div class="container">
+
+  <select onchange="setLanguage(this.value)">
+<option value="en">English</option>
+<option value="ta">Tamil</option>
+<option value="hi">Hindi</option>
+</select>
+
+<h2 data-key="login">Farmer Login</h2>
+
+<input id="name" data-placeholder="name" placeholder="Name">
+
+<input id="phone" data-placeholder="phone" placeholder="Phone Number">
+
+<input id="email" data-placeholder="email" placeholder="Email">
+
+<button onclick="login()" data-key="loginBtn">Login</button>
+
+</div>
+
+
+
+<script>
+
+    function login(){
+
+        let name=document.getElementById("name").value.trim();
+        let phone=document.getElementById("phone").value.trim();
+        let email=document.getElementById("email").value.trim().toLowerCase();
+        
+        if(name==="" || phone==="" || email===""){
+        alert("Please fill all details");
+        return;
+        }
+        
+        if(phone.length < 10){
+        alert("Enter valid phone number");
+        return;
+        }
+        
+        localStorage.setItem("farmerName",name);
+        localStorage.setItem("farmerPhone",phone);
+        localStorage.setItem("farmerEmail",email);
+        
+        if(email==="admin"){
+        window.location.href="admin.html";
+        }
+        else{
+        window.location.href="location.html";
+        }
+        
+        }
+        /*const user = document.getElementById("username").value;
+  const ass = document.getElementById("password").value;
+        if (user === "admin" && pass === "admin123") {
+            localStorage.setItem("admin", "true");
+            window.location.href = "admin.html";
+          } else {
+            window.location.href = "location.html";
+          }*/
+        
+    </script>
+</div>
+</body>
+
+</html>
